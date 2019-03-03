@@ -25,14 +25,6 @@ Given("I click {string}") do |element|
   click_on element
 end
 
-Given("I am a subscriber") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("I am a user") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When("I click on {string} on {string}") do |time, date|
   case date
   when "tomorrow"

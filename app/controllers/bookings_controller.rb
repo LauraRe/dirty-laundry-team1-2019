@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: :create
   def index
-
     @laundry = Laundry.first
     open_weather_api = Rails.configuration.open_weather_api
     weather = open_weather_api.forecast :hourly, city: "Stockholm", country_code: "se", default_unit: "metric"
@@ -13,7 +12,6 @@ class BookingsController < ApplicationController
       end
     end
   end
-
 
   def create
     if current_user.bookings.length < 1 || (current_user.subscriber? && current_user.bookings.length < 4)

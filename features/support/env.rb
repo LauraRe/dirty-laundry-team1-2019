@@ -46,8 +46,7 @@ Before '@api_call' do
       headers: {
       'Accept'=>'*/*',
       'Accept-Encoding'=>'gzip, deflate',
-      'Host'=>'api.openweathermap.org',
-      'User-Agent'=>'rest-client/2.0.2 (darwin18.2.0 x86_64) ruby/2.4.3p205'
+      'Host'=>'api.openweathermap.org'
       }).
     to_return(status: 200, body: Rails.root.join('features', 'support', 'fixtures', 'weather_api_stub.txt').read, headers: {})
   end

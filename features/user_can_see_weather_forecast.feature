@@ -6,6 +6,9 @@ Feature: User can see weather forecast
     In order to plan my washing days
     I would like to know the weather forecast
 
+    Background:
+        Given we have 1 laundry
+
     Scenario: User can see weather forecast on the page
         Given I am on the "Landing" page
         Then I should see "scattered clouds 1 Friday"
