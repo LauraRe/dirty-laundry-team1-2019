@@ -23,5 +23,8 @@ module DirtyLaundryTeam12019
       generate.controller_specs false
       generate.system_tests false
     end
+
+    config.stripe.secret_key = 'sk_test_SfGc4FrtyPJXeMQP58EJRmxM'
+    config.stripe.publishable_key = 'pk_test_uC6X9Rshj8WCjuGBfN9o9HvT'
   end
 end

@@ -16,7 +16,26 @@ Warden.test_mode!
 World Warden::Test::Helpers
 After { Warden.test_reset! }
 
+Chromedriver.set_version '2.42'
+
+chrome_options = %w[headless disable-popup-blocking disable-infobars]
+
+chrome_options << 'auto-open-devtools-for-tabs'
+
+Capybara.register_driver :chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new(
+    args: chrome_options
+  )
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :chrome,
+    options: options
+  )
+end
+
 Cucumber::Rails::Database.javascript_strategy = :truncation
+Capybara.server = :puma
+Capybara.javascript_driver = :chrome
 
 Before do
   OmniAuth.config.test_mode = true
