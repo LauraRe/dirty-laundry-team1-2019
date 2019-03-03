@@ -13,3 +13,28 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', () => {
+    const subscriptionForm = document.getElementById('subscription_form')
+
+    if (subscriptionForm) {
+        const stripe = Stripe('pk_test_uC6X9Rshj8WCjuGBfN9o9HvT')
+        const elements = stripe.elements()
+        const card = elements.create('card', {hidePostalCode: true})
+
+        card.mount('#card_element')
+
+        subscriptionForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            stripe.createToken(card).then(result => {
+                const hiddenInput = document.createElement('input')
+                hiddenInput.setAttribute('type', 'hidden')
+                hiddenInput.setAttribute('name', 'stripeToken')
+                hiddenInput.setAttribute('value', result.token.id)
+                subscriptionForm.appendChild(hiddenInput)
+
+                subscriptionForm.submit
+            })
+        })
+    }
+}) 

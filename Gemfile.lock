@@ -67,6 +67,7 @@ GEM
       xpath (~> 3.2)
     coderay (1.1.2)
     concurrent-ruby (1.1.4)
+    connection_pool (2.2.2)
     coveralls (0.8.22)
       json (>= 1.8, < 3)
       simplecov (~> 0.16.1)
@@ -159,7 +160,12 @@ GEM
     multi_test (0.1.2)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+<<<<<<< HEAD
     netrc (0.11.0)
+=======
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
+>>>>>>> 9ee7522d3adfd0b99faa67999f0efb9a8faf1db5
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -282,6 +288,13 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (4.9.0)
+      faraday (~> 0.13)
+      net-http-persistent (~> 3.0)
+    stripe-rails (1.6.0)
+      rails (>= 3)
+      responders
+      stripe (>= 1.36.2)
     tailwindcss (0.2.0)
       railties (>= 4.1.0, < 6.0)
     term-ansicolor (1.7.1)
@@ -347,6 +360,7 @@ DEPENDENCIES
   simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe-rails
   tailwindcss (~> 0.2.0)
   turbolinks (~> 5)
   uglifier (>= 1.3.0)

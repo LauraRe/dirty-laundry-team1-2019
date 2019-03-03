@@ -22,6 +22,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem 'stripe-rails'
 
 
 group :development, :test do
@@ -34,6 +35,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'coveralls', require: false
   gem 'launchy'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
 end
 
 group :development do
